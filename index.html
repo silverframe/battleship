@@ -13,6 +13,23 @@
 
 <body>
 	<div class="twogrids">
+		<div class="sidePanel">
+			<div class = "Timer">
+				<p>Timer</p>
+				<div id = "countdownTimer"></div>
+			</div>
+		<div class="chooseShips">
+				<h2>Your Ships</h2>
+				<div id="listShips">
+				<div class= "ships" id="patrolboat">Patrol Boat</div>
+				<div class= "ships" id="submarine">Submarine</div>
+				<div class= "ships" id="destroyer">Destroyer</div>
+				<div class= "ships" id="battleship">Battleship</div>
+				<div class= "ships" id="carrier">Aircraft Carrier</div>
+				</div>
+				<button id="rotate-button" data-direction="0">Rotate Ship</button>
+		</div>
+		</div> 
 		<div class="entireGrid" id="entireGrid1">
 		<div class="gridHeader" id="player2">Enemy Board</div>
     	<div class= "grid" id ="grid1">
@@ -308,6 +325,7 @@
     		</div>
     	</div>
     </div>
+
 			</div>
     </div>
     <div class="scoreboard">
