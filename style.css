@@ -1,0 +1,177 @@
+.twogrids{
+        width: 80%;
+        height: 500px;
+        margin: 0 auto;
+        display: flex;
+
+    }
+
+.entireGrid{
+        display: flex;
+        flex-direction: column;
+
+}
+
+#entireGrid1{
+        display: flex;
+        width: 500px;
+        mask;
+}
+
+#entireGrid2{
+        display: flex;
+        width: 500px;
+}
+.grid{
+        display: flex;
+        max-width: 400px;
+        margin: 0 auto;
+        margin-top: 30px;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+
+
+    }
+
+.gridHeader{
+        display: flex;
+       /* margin-left: 100px;
+        margin-top: 50px;
+        margin-bottom: -70px; */
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: -25px;
+        align-content: space-between;
+        justify-content: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+
+
+}
+
+.gridHeader > p {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+}
+
+
+
+.row {
+        display: flex;
+}
+
+
+
+.square {
+        /*flex: 1;*/
+        height: 30px;
+        width: 30px;
+        border: 0.5px solid #A09C9C;
+        background-color: #8AA6C8;
+        margin: 1px;
+        text-align: center;
+        font-family: 'Oxygen', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: white;
+        line-height: 30px;
+        /*align-self: center;*/
+    }
+
+
+.square:hover{
+        background-color: #70849C;
+}
+
+.labeling {
+
+        width: 343px;
+        height: 36px;
+        display: flex;
+        text-align: center;
+        justify-content: space-around;
+        font: 10px ;
+        margin-left: 32px;
+
+
+}
+
+
+.letters {
+        font-family: 'Montserrat', sans-serif;
+        width: 31.8px;
+/*        height: 31.8px; */
+        background-color: transparent;
+
+}
+
+.number {
+        font-family: 'Montserrat', sans-serif;
+        display: flex;
+        width: 31px;
+        height: 31px;
+        text-align: center;
+        vertical-align: center;
+        justify-content: space-around;
+        align-items: center;
+
+}
+/*/*    /*-- our cleafix hack -- */
+  /*  .row:before,
+    .row:after {
+        display: table ;
+        clear:both;
+    }
+*/
+
+.scoreboard{
+        display: flex;
+        width: 60% ;
+
+        flex-direction; column;
+        margin: 0 auto;
+        text-align: center;
+/*        border: 1px solid black; */
+}
+
+#header{
+        order: <1>;
+        justify-content: center;
+}
+
+.overallScores{
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+        order: <2>;
+}
+
+.col{
+
+        display: flex;
+        flex-direction: column;
+        padding: 1px;
+        font-family: 'Montserrat', sans-serif;
+        flex-basis: 130px;
+
+
+}
+
+.headings{
+/*        width: 130px; */
+        height: auto;
+        background-color: #8C6A95;
+        color: white;
+        vertical-align: middle;
+        text-align: center;
+}
+
+.score{
+/*        width: 130px; */
+        height: auto;
+        color: white;
+        background-color: #D5A3E3;
+}
