@@ -3,7 +3,7 @@ $(function()
 {
 	console.log($('.square'));
 	createGrid();
-	// getNames();
+	getNames();
 
 var arrayShips = createShipsArray();
 
