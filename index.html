@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<div class="twogrids">
+	<div class="container">
 		<div class="sidePanel">
 			<div class = "Timer">
 				<p>Timer</p>
@@ -40,8 +40,13 @@
 				</div>
 		</div>
 		</div>
+	<div class = "centerPanel">
+	<div class = "mainHeader">
+		<p>Welcome to Speed Battleship</p>
+	</div>
+	<div class = "twoGrids">
 		<div class="entireGrid" id="entireGrid1">
-		<div class="gridHeader" id="player2">Enemy Board</div>
+		<!-- <div class="gridHeader" id="player2">Enemy Board</div> -->
     	<div class= "grid" id ="grid1">
     		<div class="labeling">
     			<div class ="letters"> <p>A</p> </div>
@@ -186,10 +191,11 @@
     			<div class="square" class="column 10" id = "J10"></div>
     		</div>
     	</div>
+			<div class="gridHeader" id="player2">Enemy Board</div>
     	</div>
 
     	<div class="entireGrid" id="entireGrid1">
-    	<div class="gridHeader" id="player1">Your Board</div>
+    	<!-- <div class="gridHeader" id="player1">Your Board</div> -->
     	<div class= "grid" id ="grid2">
     		<div class="labeling">
     			<div class ="letters"> <p>A</p> </div>
@@ -334,8 +340,10 @@
     			<div class="square" class="column 10" id = "J10"></div>
     		</div>
     	</div>
+			<div class="gridHeader" id="player1">Your Board</div>
     </div>
-
+	</div>
+	</div>
 			</div>
     </div>
     <!-- <div class="scoreboard">

@@ -1,4 +1,13 @@
-.twogrids{
+.mainHeader {
+        font-size: 45px;
+        margin: auto;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        margin-top: 50px;
+
+}
+
+.container{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -18,6 +27,10 @@
         margin-bottom: 10px;
 }
 
+.centerPanel {
+        display: flex;
+        flex-direction: column;
+}
 .Timer{
         width: 200px;
         height: 150px;
@@ -88,16 +101,22 @@
 .sideScore > p {
         margin: 10px 0px 10px 0px;
 }
+
+.twoGrids {
+        display: flex;
+        /*margin-top: 200px;*/
+
+}
 .entireGrid{
         display: flex;
         flex-direction: column;
+
 
 }
 
 #entireGrid1{
         display: flex;
         width: 500px;
-        mask;
 }
 
 #entireGrid2{
