@@ -1,11 +1,73 @@
 .twogrids{
-        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
         height: 500px;
         margin: 0 auto;
-        display: flex;
+        align-items:center;
+
 
     }
 
+.sidePanel {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+}
+
+.Timer{
+        width: 200px;
+        height: 150px;
+        border: 5px solid black;
+        border-radius: 10px;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        vertical-align: top;
+        line-height: 30px;
+        font-size: 30px;
+        margin: 20px 0px 20px 0px;
+        align-items: center;
+
+}
+
+.Timer > p {
+        font-weight: 700;
+}
+
+#countdownTimer {
+        padding: 10px 0px 0px 10px;
+        margin-right: 10px;
+}
+
+.chooseShips{
+        width: 200px;
+        height: 200px;
+        font-family: 'Montserrat', sans-serif;
+        border: 5px solid black;
+        border-radius: 10px;
+        align-items: center;
+        text-align: center;
+        justify-content: space-around;
+        margin-top: 20px;
+
+
+
+}
+
+.chooseShips > h2 {
+        margin: 10px 0px 10px 0px;
+}
+
+.chooseShips > #listShips {
+        margin-bottom: 20px;
+
+
+}
+
+.ships:hover {
+        text-decoration: underline;
+}
 .entireGrid{
         display: flex;
         flex-direction: column;
@@ -163,7 +225,7 @@
 .headings{
 /*        width: 130px; */
         height: auto;
-        background-color: #8C6A95;
+        background-color: #919698;
         color: white;
         vertical-align: middle;
         text-align: center;
@@ -173,5 +235,5 @@
 /*        width: 130px; */
         height: auto;
         color: white;
-        background-color: #D5A3E3;
+        background-color: #CFD6D9;
 }
