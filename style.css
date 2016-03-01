@@ -210,11 +210,29 @@
         /*align-self: center;*/
     }
 
+.cell {
+        /*flex: 1;*/
+        height: 30px;
+        width: 30px;
+        /*border: 0.5px solid #A09C9C;*/
+        background-color: #4682B4;
+        margin: 1px;
+        text-align: center;
+        font-family: 'Oxygen', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: white;
+        line-height: 30px;
+        /*align-self: center;*/
+    }
 
 .square:hover{
         background-color: #A9A9A9;
 }
 
+.cell:hover {
+        background-color: #A9A9A9;
+}
 .place-ship {
         background-color: #A9A9A9;
 }

@@ -12,26 +12,72 @@ var patrolboat = 2;
 $(function()
 {
 
-	$("#patrolboat").on('click', function (){
+	boats("carrier");
+	boats("battleship");
+	boats("destroyer");
+	boats("submarine");
+	boats("patrolboat");
+
+function boats(boats)
+{
+	var add = 0;
+	if(boats=="carrier")
+	{
+		add = 4;
+	}
+	else if(boats=="battleship")
+	{
+		add = 3;
+	}
+	else if(boats == "destroyer")
+	{
+		add = 2;
+	}
+	else if(boats == "submarine")
+	{
+		add = 2;
+	}
+	else if(boats =="patrolboat")
+	{
+		add = 1;
+	}
+	$("#"+boats).on('click', function (){
 
 			$(".square").hover(function(event) {
-				console.log(event.delegateTarget.dataset.x)
-				console.log(event.delegateTarget.dataset.y)
+				// console.log(event.delegateTarget.dataset.x);
+				// console.log(event.delegateTarget.dataset.y);
 				var dataX = event.delegateTarget.dataset.x;
 				var dataY = event.delegateTarget.dataset.y;
-				var query = '.square[data-x="' + dataX + '"]' + '[data-y="' + (Number(dataY) + 1) + '"]'
-				var next = '.square[data-x="' + dataX + '"]' + '[data-y="' + (Number(dataY) + 1) + '"]'
-				var $cell = $(query)
-				$cell.toggleClass('place-ship')
-					// $("this").css('backgroundColor', '#B22222');
-					// $("this" + [i]).css('backgroundColor', '#B22222');
+				for(var i=0; i<add; i++)
+				{
+					var query = '.square[data-x="' + dataX + '"]' + '[data-y="' + ((Number(dataY)) + (i + 1))  + '"]';
+					var $cell = $(query);
+					$cell.addClass('place-ship');
+				}
+
+
+
+			})
+			$(".cell").hover(function(event) {
+				// console.log(event.delegateTarget.dataset.x);
+				// console.log(event.delegateTarget.dataset.y);
+				var dataX = event.delegateTarget.dataset.x;
+				var dataY = event.delegateTarget.dataset.y;
+				var query = '.cell[data-x="' + dataX + '"]' + '[data-y="' + (Number(dataY) + add) + '"]';
+				// var next = '.cell[data-x="' + dataX + '"]' + '[data-y="' + (Number(dataY) + add) + '"]';
+				var $cell = $(query);
+				$cell.toggleClass('place-ship');
+
 			})
 
-	})
 
-	console.log($('.square'));
-	createGrid();
+
+	})
+}
+	// console.log($('.square'));
 	getNames();
+	createGrid();
+
 
 var arrayShips = createShipsArray();
 
@@ -114,15 +160,17 @@ $('.squares').on('click',function()
 // }
 
 function createGrid() {
-	var numberGrid = $('.square');
-console.log(numberGrid);
+	var numberGrid1 = $('.cell');
+	var numberGrid2 = $('.square');
+// console.log(numberGrid);
 	var count = 0;
+	var count1 = 0
 		for (var i = 0; i < 10; i++) {
 			for (var j = 0; j < 10; j++) {
 				// console.log(numberGrid[grid1]);
 
-				numberGrid[count].setAttribute('data-x', i);
-				numberGrid[count].setAttribute('data-y', j);
+				numberGrid1[count].setAttribute('data-x', i);
+				numberGrid1[count].setAttribute('data-y', j);
 				// $(".square").setAttribute('class', 'grid-cell grid-cell-' + i + '-' + j);
 
 				count++;
@@ -134,15 +182,46 @@ console.log(numberGrid);
 		for (var j = 0; j < 10; j++) {
 			// console.log(numberGrid[grid1]);
 
-			numberGrid[count].setAttribute('data-x', i);
-			numberGrid[count].setAttribute('data-y', j);
+			numberGrid2[count1].setAttribute('data-x', i);
+			numberGrid2[count1].setAttribute('data-y', j);
 			// $(".square").setAttribute('class', 'grid-cell grid-cell-' + i + '-' + j);
 
-			count++;
+			count1++;
 
 			}
 		}
 };
+// Probably going to need this later!!
+// function createGrid() {
+// 	var numberGrid = $('.square');
+// // console.log(numberGrid);
+// 	var count = 0;
+// 		for (var i = 0; i < 10; i++) {
+// 			for (var j = 0; j < 10; j++) {
+// 				// console.log(numberGrid[grid1]);
+//
+// 				numberGrid[count].setAttribute('data-x', i);
+// 				numberGrid[count].setAttribute('data-y', j);
+// 				// $(".square").setAttribute('class', 'grid-cell grid-cell-' + i + '-' + j);
+//
+// 				count++;
+//
+// 			}
+// 		}
+//
+// 	for (var i = 0; i < 10; i++) {
+// 		for (var j = 0; j < 10; j++) {
+// 			// console.log(numberGrid[grid1]);
+//
+// 			numberGrid[count].setAttribute('data-x', i);
+// 			numberGrid[count].setAttribute('data-y', j);
+// 			// $(".square").setAttribute('class', 'grid-cell grid-cell-' + i + '-' + j);
+//
+// 			count++;
+//
+// 			}
+// 		}
+// };
 
 var CONST = {};
 CONST.AVAILABLE_SHIPS = ['carrier', 'battleship', 'destroyer', 'submarine', 'patrolboat'];
