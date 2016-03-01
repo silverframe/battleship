@@ -1,6 +1,34 @@
+var CONST = {};
+CONST.AVAILABLE_SHIPS = ['carrier', 'battleship', 'destroyer', 'submarine', 'patrolboat'];
+
+var carrier = 5;
+var battleship =4;
+var destroyer = 3;
+var submarine = 3;
+var patrolboat = 2;
+
+
 
 $(function()
 {
+
+	$("#patrolboat").on('click', function (){
+
+			$(".square").hover(function(event) {
+				console.log(event.delegateTarget.dataset.x)
+				console.log(event.delegateTarget.dataset.y)
+				var dataX = event.delegateTarget.dataset.x;
+				var dataY = event.delegateTarget.dataset.y;
+				var query = '.square[data-x="' + dataX + '"]' + '[data-y="' + (Number(dataY) + 1) + '"]'
+				var next = '.square[data-x="' + dataX + '"]' + '[data-y="' + (Number(dataY) + 1) + '"]'
+				var $cell = $(query)
+				$cell.toggleClass('place-ship')
+					// $("this").css('backgroundColor', '#B22222');
+					// $("this" + [i]).css('backgroundColor', '#B22222');
+			})
+
+	})
+
 	console.log($('.square'));
 	createGrid();
 	getNames();
