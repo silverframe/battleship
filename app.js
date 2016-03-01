@@ -59,7 +59,7 @@ function changeColor()
 	$(".square").click(function()
 	{
 	  $(this).addClass('X').text("X");
-	  $(this).css('backgroundColor', '#E3A3B0');
+	  $(this).css('backgroundColor', '#B22222');
 	});
 }
 
