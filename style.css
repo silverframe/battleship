@@ -226,17 +226,24 @@
         /*align-self: center;*/
     }
 
-.square:hover{
+/*.square:hover{
         background-color: #A9A9A9;
 }
 
 .cell:hover {
         background-color: #A9A9A9;
+}*/
+.hover-ship {
+        background-color: #A9A9A9;
 }
+
 .place-ship {
         background-color: #A9A9A9;
 }
 
+.fire {
+        background-color: #B22222;
+}
 .labeling {
 
         width: 320px;
@@ -318,6 +325,8 @@
         color: white;
         vertical-align: middle;
         text-align: center;
+
+
 }
 
 .score{
