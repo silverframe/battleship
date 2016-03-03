@@ -19,7 +19,7 @@ var placedBoats = [];
 
 var arrayShips = createShipsArray();
 
-var fourtyfiveSeconds = 5;
+// var fourtyfiveSeconds = 5;
 
 display = document.querySelector('#countdownTimer');
 
