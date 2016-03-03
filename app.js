@@ -19,7 +19,7 @@ var placedBoats = [];
 
 var arrayShips = createShipsArray();
 
-// var fourtyfiveSeconds = 5;
+var fourtyfiveSeconds = 5;
 
 display = document.querySelector('#countdownTimer');
 
@@ -42,11 +42,13 @@ function getNames() {
   if (qn1 !== null && qn2 !== null) {
     // console.log($('#player1'));
     $("#player1").text(qn1 + "'s Board");
-    $("#player1Hits").text(qn1 + "'s Hits");
-    $("#player1Misses").text(qn1 + "'s Misses");
+    $("#player1Name").text(qn1);
+    $("#player1Hits").text("Hits: "+ hits);
+    $("#player1Misses").text("Misses: "+ misses);
     $("#player2").text(qn2 + "'s Board");
-    $("#player2Hits").text(qn2 + "'s Hits");
-    $("#player2Misses").text(qn2 + "'s Misses");
+    $("#player2Name").text(qn2);
+    $("#player2Hits").text("Hits: "+ hits1);
+    $("#player2Misses").text("Misses: "+ misses1);
   };
 
 }
@@ -142,13 +144,13 @@ function changeColor(className, idHits, idMiss, hitCounter, missCounter) {
         } else {
           hits1++;
         }
-        $(idHits).text(hitCounter);
+        $(idHits).text("Hits: "+hitCounter);
 
       } else if (arrayShips[x][y] == false) {
         $(this).addClass('missed');
         $(this).text('X');
         missCounter++;
-        $(idMiss).text(missCounter);
+        $(idMiss).text("Misses: "+missCounter);
       }
     }
   });
@@ -175,7 +177,7 @@ function startTimer(duration, display) {
     if (--timer < 0) {
       window.clearInterval(intervalId)
       timer = 5;
-      // alert("Time's up!");
+      alert("Time's up!");
 
       console.log(turn);
       awesome();
