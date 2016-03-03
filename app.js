@@ -1,7 +1,7 @@
 /*global $*/
-var qn1;
+var qn1 = null;
 
-var qn2;
+var qn2 = null;
 
 var turn = "X";
 
@@ -15,11 +15,16 @@ var hits1 = 0;
 
 var misses1 = 0;
 
-var placedBoats = [];
+// var sayings = ["Even good things come to an end.", "Did you squash your enemy?", "Wasn't that fun?",
+// "Cool stuff.","Howdy there.", "How were the sea animals?", "Dolphins are nice, aren't they?", "That was some crazy clicking",
+// "" ];
+
+var sayings = ["Loose Cannon", "Plain Sailing", "Know the Ropes", "Tide Over", "High and Dry", "Get Underway",
+"Anchors Aweigh", "All at Sea", "Panic Stations", "Push the Boat Out"];
 
 var arrayShips = createShipsArray();
 
-var fourtyfiveSeconds = 5;
+var fourtyfiveSeconds = 30;
 
 display = document.querySelector('#countdownTimer');
 
@@ -28,27 +33,33 @@ $(function() {
   createGrid();
   newShips();
   newShips1();
-  getNames();
-  awesome();
+  // var el = document.getElementById("playSign");
+  // el.addEventListener("click", getNames);
+  // getNames();
+  // awesome();
+  $("#playSign").click(getNames);
+  var i = Math.floor((Math.random() * 10));
+  $('#message').text(sayings[i]);
 
 
 })
 
 function getNames() {
-
-  var qn1 = prompt("Please enter your name", "Player 1");
-  var qn2 = prompt("Please enter your name", "Player 2");
+// document.getElementById('playSign')
+  qn1 = prompt("Please enter your name", "Player 1");
+  qn2 = prompt("Please enter your name", "Player 2");
 
   if (qn1 !== null && qn2 !== null) {
     // console.log($('#player1'));
-    $("#player1").text(qn1 + "'s Board");
+    $("#player1").text(qn1 + "'s Sea");
     $("#player1Name").text(qn1);
     $("#player1Hits").text("Hits: "+ hits);
     $("#player1Misses").text("Misses: "+ misses);
-    $("#player2").text(qn2 + "'s Board");
+    $("#player2").text(qn2 + "'s Sea");
     $("#player2Name").text(qn2);
     $("#player2Hits").text("Hits: "+ hits1);
     $("#player2Misses").text("Misses: "+ misses1);
+    awesome(qn1);
   };
 
 }
@@ -186,9 +197,9 @@ function startTimer(duration, display) {
   }, 1000)
 };
 
-function awesome() {
+function awesome(qn1) {
   if (counter === 2) {
-    alert("Game over!" + qn1 +"has a score of " + hits + " and " +qn2+ " has a score of " + hits1);
+    alert("Game over! Player 1 has a score of " + hits + " and Player 2 has a score of " + hits1);
     if (hits > hits1) {
     alert("Player 1 Wins!")
   } else if (hits < hits1) {
@@ -196,18 +207,22 @@ function awesome() {
   } else if (hits == hits1) {
     alert ("It's a draw, please try again!")
   }
-
+console.log(qn1);
     window.location.reload();
   }
   if (turn === "X") {
-    alert("Player 1, are you ready?");
+    alert("Player 1, you have 30s to sink as many ships as you can.");
+    var i = Math.floor((Math.random() * 10));
+    $('#message').text(sayings[i]);
     startTimer(fourtyfiveSeconds, display);
     changeColor(".cell", "#hitScore", "#missScore", hits, misses);
     counter++;
     turn = "Y";
 
   } else if (turn === "Y") {
-    alert("Player 2, are you ready?")
+    alert("Player 2, it's your turn now!")
+    var i = Math.floor((Math.random() * 10));
+    $('#message').text(sayings[i])
     startTimer(fourtyfiveSeconds, display);
     changeColor(".square", "#hitScore1", "#missScore1", hits1, misses1);
     counter++;
