@@ -3,7 +3,7 @@
         margin: 0 auto;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
-        margin-top: 50px;
+        margin-top: 15px;
         align-items: center;
         text-align: center;
 
@@ -33,7 +33,7 @@
         width: 100%;
         height: 500px;
         margin: 0 auto;
-        align-items:center;
+        /*align-items:center;*/
 
 
     }
@@ -42,13 +42,14 @@
         display: flex;
         flex-direction: column;
         height: auto;
-        margin-top: auto;
+        margin-top: 15px;
         margin-bottom: 10px;
 }
 
 .centerPanel {
         display: flex;
         flex-direction: column;
+        height: 90%;
 }
 .Timer{
         width: 200px;
@@ -59,7 +60,7 @@
         text-align: center;
         line-height: 30px;
         font-size: 30px;
-        /*margin: 20px 0px 20px 0px;*/
+        margin: 20px 0px 20px 0px;
 
 }
 
@@ -112,43 +113,49 @@
 
 .sideScore{
         width: 200px;
-        height: 200px;
+        height: auto;
         font-family: 'Montserrat', sans-serif;
         border: 3px solid black;
         border-radius: 10px;
         align-items: center;
         text-align: center;
-        font-size: 25px;
+        font-size: 20px;
         font-weight: 700;
         line-height: 20px;
+        vertical-align: middle;
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
         /*text-align: center;
         justify-content: space-around;
         margin-top: 20px;*/
 }
 
-.sideScore > p {
+.sideScore > div {
         margin: 10px 0px 10px 0px;
 }
 
 .twoGrids {
         display: flex;
-        /*margin-top: 200px;*/
+        height: 500px;
+        margin-top: 20px;
 
 }
 .entireGrid{
-        display: flex;
-        flex-direction: column;
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*justify-content: space-around;*/
 
 
 }
 
 #entireGrid1{
-        display: flex;
+        /*display: flex;*/
         width: 500px;
 }
 
 #entireGrid2{
-        display: flex;
+        /*display: flex;*/
         width: 500px;
 }
 .grid{
@@ -164,18 +171,14 @@
     }
 
 .gridHeader{
-        display: flex;
-       /* margin-left: 100px;
-        margin-top: 50px;
-        margin-bottom: -70px; */
         margin: 0 auto;
-        margin-top: 10px;
-        margin-bottom: -25px;
-        align-content: space-between;
-        justify-content: center;
+        margin-bottom: 20px;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 30px;
+        align-items: flex-end;
+        text-align: center;
+
 
 
 }
@@ -184,6 +187,7 @@
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 30px;
+
 }
 
 
@@ -210,11 +214,44 @@
         /*align-self: center;*/
     }
 
+.cell {
+        /*flex: 1;*/
+        height: 30px;
+        width: 30px;
+        /*border: 0.5px solid #A09C9C;*/
+        background-color: #4682B4;
+        margin: 1px;
+        text-align: center;
+        font-family: 'Oxygen', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: white;
+        line-height: 30px;
+        /*align-self: center;*/
+    }
 
-.square:hover{
+/*.square:hover{
         background-color: #A9A9A9;
 }
 
+.cell:hover {
+        background-color: #A9A9A9;
+}*/
+.hover-ship {
+        background-color: #A9A9A9;
+}
+
+.place-ship {
+        background-color: #A9A9A9;
+}
+
+.fire {
+        background-color: #B22222;
+}
+
+.missed {
+        background-color: #52494A;
+}
 .labeling {
 
         width: 320px;
@@ -224,6 +261,7 @@
         justify-content: space-around;
         font: 10px ;
         margin-left: 32px;
+
 
 
 }
@@ -296,6 +334,8 @@
         color: white;
         vertical-align: middle;
         text-align: center;
+
+
 }
 
 .score{
