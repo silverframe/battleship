@@ -16,7 +16,7 @@
         <p>Timer</p>
         <div id="countdownTimer"></div>
       </div>
-      <div class="chooseShips">
+      <!-- <div class="chooseShips">
         <h2>Your Ships</h2>
         <div id="listShips">
           <div class="ships" id="patrolboat">Patrol Boat</div>
@@ -26,15 +26,27 @@
           <div class="ships" id="carrier">Aircraft Carrier</div>
         </div>
         <button id="rotate-button" data-direction="0">Rotate Ship</button>
-      </div>
+      </div> -->
       <div class="sideScore">
-        <div class="yourHits">
-          <p>Hits:</p>
-          <p>0</p>
+        <div class="player1Score">
+          <div class="yourHits">
+            <p id="player1Hits">Hits:</p>
+            <p id="hitScore">0</p>
+          </div>
+          <div class="yourMisses">
+            <p id="player1Misses">Misses:</p>
+            <p id="missScore">0</p>
+          </div>
         </div>
-        <div class="yourMisses">
-          <p>Misses:</p>
-          <p>0</p>
+        <div class="player2Score">
+          <div class="yourHits">
+            <p id="player2Hits">Hits:</p>
+            <p id="hitScore1">0</p>
+          </div>
+          <div class="yourMisses">
+            <p id="player2Misses">Misses:</p>
+            <p id="missScore1">0</p>
+          </div>
         </div>
       </div>
     </div>
@@ -46,7 +58,6 @@
       </div>
       <div class="twoGrids">
         <div class="entireGrid" id="entireGrid1">
-          <!-- <div class="gridHeader" id="player2">Enemy Board</div> -->
           <div class="grid" id="grid1">
             <div class="labeling">
               <div class="letters">
@@ -230,11 +241,10 @@
                   <div class="cell" class="column 10" id="J10"></div>
                 </div>
               </div>
-              <div class="gridHeader" id="player1">Enemy Board</div>
+             <div class="gridHeader" id="player1">Enemy Board</div>
             </div>
 
-            <div class="entireGrid" id="entireGrid1">
-              <!-- <div class="gridHeader" id="player1">Your Board</div> -->
+            <div class="entireGrid" id="entireGrid2">
               <div class="grid" id="grid2">
                 <div class="labeling">
                   <div class="letters">
@@ -444,6 +454,6 @@
     		</div>
     	</div>
     </div> -->
-      <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-      <script src="app.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="app.js"></script>
       </body>
