@@ -19,7 +19,7 @@ var placedBoats = [];
 
 var arrayShips = createShipsArray();
 
-// var fourtyfiveSeconds = 5;
+var fourtyfiveSeconds = 5;
 
 display = document.querySelector('#countdownTimer');
 
@@ -189,6 +189,14 @@ function startTimer(duration, display) {
 function awesome() {
   if (counter === 2) {
     alert("Game over!" + qn1 +"has a score of " + hits + " and " +qn2+ " has a score of " + hits1);
+    if (hits > hits1) {
+    alert("Player 1 Wins!")
+  } else if (hits < hits1) {
+    alert("Player 2 Wins!")
+  } else if (hits == hits1) {
+    alert ("It's a draw, please try again!")
+  }
+
     window.location.reload();
   }
   if (turn === "X") {
