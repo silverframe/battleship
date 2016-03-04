@@ -15,6 +15,10 @@ var hits1 = 0;
 
 var misses1 = 0;
 
+// var accurate = hit/(hit+miss);
+//
+// var accurate1 = hit1/(hit1+miss1);
+
 // var sayings = ["Even good things come to an end.", "Did you squash your enemy?", "Wasn't that fun?",
 // "Cool stuff.","Howdy there.", "How were the sea animals?", "Dolphins are nice, aren't they?", "That was some crazy clicking",
 // "" ];
@@ -191,6 +195,7 @@ function startTimer(duration, display) {
       alert("Time's up!");
 
       console.log(turn);
+      // console.log(accurate); 
       awesome();
 
     }
@@ -230,89 +235,89 @@ console.log(qn1);
   }
 }
 
-//
-// function myBoats(boats) {
-//   var add = 0;
-//   var allBoats = ["patrolboat", "submarine", "carrier", "destroyer", "battleship"]
-//   if (boats == "carrier") {
-//     add = 4;
-//   } else if (boats == "battleship") {
-//     add = 3;
-//   } else if (boats == "destroyer") {
-//     add = 2;
-//   } else if (boats == "submarine") {
-//     add = 2;
-//   } else if (boats == "patrolboat") {
-//     add = 1;
-//   }
-//
-//   $("#" + boats).on('click', function() {
-//
-//     $(".square").hover(function(event) {
-//       var dataX = event.delegateTarget.dataset.x;
-//       var dataY = event.delegateTarget.dataset.y;
-//       $(this).toggleClass('hover-ship');
-//       for (var i = 0; i < add; i++) {
-//         var query = '.square[data-x="' + dataX + '"]' + '[data-y="' + ((Number(dataY)) + (i + 1)) + '"]';
-//         var $cell = $(query);
-//         $cell.toggleClass('hover-ship');
-//
-//       };
 
-      // $("#rotate-button").click(function() {
-      // 	$(this).toggleClass('hover-ship');
-      // 	for (var i = 0; i < add; i++) {
-      // 		var query = '.square[data-x="' + ((Number(dataX)) + (i + 1)) + '"]' + '[data-y="' + dataY + '"]';
-      // 		var $cell = $(query);
-      // 		$cell.toggleClass('hover-ship'); }
-      // 	});
+function myBoats(boats) {
+  var add = 0;
+  var allBoats = ["patrolboat", "submarine", "carrier", "destroyer", "battleship"]
+  if (boats == "carrier") {
+    add = 4;
+  } else if (boats == "battleship") {
+    add = 3;
+  } else if (boats == "destroyer") {
+    add = 2;
+  } else if (boats == "submarine") {
+    add = 2;
+  } else if (boats == "patrolboat") {
+    add = 1;
+  }
 
-//
-//       $(this).on('click', function() {
-//         $(this).addClass('place-ship');
-//         var x = Number($(this).attr('data-x'));
-//         var y = Number($(this).attr('data-y'));
-//         arrayShips[x][y] = true;
-//         for (var i = 0; i < add; i++) {
-//           var query = '.square[data-x="' + dataX + '"]' + '[data-y="' + ((Number(dataY)) + (i + 1)) + '"]';
-//           var $cell = $(query);
-//           var x = Number($cell.attr('data-x'));
-//           var y = Number($cell.attr('data-y'));
-//           arrayShips[x][y] = true;
-//           $cell.addClass('place-ship');
-//           // console.log(arrayShips);
-//         }
-//
-//       })
-//     })
-//
-//     $(".cell").hover(function(event) {
-//       // $(this)
-//       var dataX = event.delegateTarget.dataset.x;
-//       var dataY = event.delegateTarget.dataset.y;
-//       $(this).toggleClass('hover-ship');
-//       for (var i = 0; i < add; i++) {
-//         var query = '.cell[data-x="' + dataX + '"]' + '[data-y="' + ((Number(dataY)) + (i + 1)) + '"]';
-//         var $cell = $(query);
-//         $cell.toggleClass('hover-ship');
-//       }
-//
-//       $(this).on('click', function() {
-//         $(this).addClass('place-ship');
-//         var x = Number($(this).attr('data-x'));
-//         var y = Number($(this).attr('data-y'));
-//         arrayShips[x][y] = true;
-//         for (var i = 0; i < add; i++) {
-//           var query = '.cell[data-x="' + dataX + '"]' + '[data-y="' + ((Number(dataY)) + (i + 1)) + '"]';
-//           var $cell = $(query);
-//           var x = Number($cell.attr('data-x'));
-//           var y = Number($cell.attr('data-y'));
-//           arrayShips[x][y] = true;
-//           $cell.addClass('place-ship');
-//           // console.log(arrayShips);
-//
-//         }
-//       })
-//     })
-//   })
-// }
+  $("#" + boats).on('click', function() {
+
+    $(".square").hover(function(event) {
+      var dataX = event.delegateTarget.dataset.x;
+      var dataY = event.delegateTarget.dataset.y;
+      $(this).toggleClass('hover-ship');
+      for (var i = 0; i < add; i++) {
+        var query = '.square[data-x="' + dataX + '"]' + '[data-y="' + ((Number(dataY)) + (i + 1)) + '"]';
+        var $cell = $(query);
+        $cell.toggleClass('hover-ship');
+
+      };
+
+      $("#rotate-button").click(function() {
+      	$(this).toggleClass('hover-ship');
+      	for (var i = 0; i < add; i++) {
+      		var query = '.square[data-x="' + ((Number(dataX)) + (i + 1)) + '"]' + '[data-y="' + dataY + '"]';
+      		var $cell = $(query);
+      		$cell.toggleClass('hover-ship'); }
+      	});
+
+
+      $(this).on('click', function() {
+        $(this).addClass('place-ship');
+        var x = Number($(this).attr('data-x'));
+        var y = Number($(this).attr('data-y'));
+        arrayShips[x][y] = true;
+        for (var i = 0; i < add; i++) {
+          var query = '.square[data-x="' + dataX + '"]' + '[data-y="' + ((Number(dataY)) + (i + 1)) + '"]';
+          var $cell = $(query);
+          var x = Number($cell.attr('data-x'));
+          var y = Number($cell.attr('data-y'));
+          arrayShips[x][y] = true;
+          $cell.addClass('place-ship');
+          // console.log(arrayShips);
+        }
+
+      })
+    })
+
+    $(".cell").hover(function(event) {
+      // $(this)
+      var dataX = event.delegateTarget.dataset.x;
+      var dataY = event.delegateTarget.dataset.y;
+      $(this).toggleClass('hover-ship');
+      for (var i = 0; i < add; i++) {
+        var query = '.cell[data-x="' + dataX + '"]' + '[data-y="' + ((Number(dataY)) + (i + 1)) + '"]';
+        var $cell = $(query);
+        $cell.toggleClass('hover-ship');
+      }
+
+      $(this).on('click', function() {
+        $(this).addClass('place-ship');
+        var x = Number($(this).attr('data-x'));
+        var y = Number($(this).attr('data-y'));
+        arrayShips[x][y] = true;
+        for (var i = 0; i < add; i++) {
+          var query = '.cell[data-x="' + dataX + '"]' + '[data-y="' + ((Number(dataY)) + (i + 1)) + '"]';
+          var $cell = $(query);
+          var x = Number($cell.attr('data-x'));
+          var y = Number($cell.attr('data-y'));
+          arrayShips[x][y] = true;
+          $cell.addClass('place-ship');
+          // console.log(arrayShips);
+
+        }
+      })
+    })
+  })
+}

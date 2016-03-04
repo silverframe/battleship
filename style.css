@@ -271,13 +271,13 @@
         -webkit-border-bottom-right-radius: 10px;
 }
 
-/*.square:hover{
+.square:hover{
         background-color: #A9A9A9;
 }
 
 .cell:hover {
         background-color: #A9A9A9;
-}*/
+}
 .hover-ship {
         background-color: #A9A9A9;
 }
