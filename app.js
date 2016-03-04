@@ -24,7 +24,7 @@ var sayings = ["Loose Cannon", "Plain Sailing", "Know the Ropes", "Tide Over", "
 
 var arrayShips = createShipsArray();
 
-var fourtyfiveSeconds = 30;
+var fourtyfiveSeconds = 20;
 
 display = document.querySelector('#countdownTimer');
 
@@ -64,16 +64,16 @@ function getNames() {
 
 }
 
-function rotate() {
-  $('#rotate-button').click(function() {
-    $(this).toggleClass('hover-ship');
-    for (var i = 0; i < add; i++) {
-      var query = '.square[data-x="' + ((Number(dataX)) + (i + 1)) + '"]' + '[data-y="' + dataY + '"]';
-      var $cell = $(query);
-      $cell.toggleClass('hover-ship');
-    }
-  })
-}
+// function rotate() {
+//   $('#rotate-button').click(function() {
+//     $(this).toggleClass('hover-ship');
+//     for (var i = 0; i < add; i++) {
+//       var query = '.square[data-x="' + ((Number(dataX)) + (i + 1)) + '"]' + '[data-y="' + dataY + '"]';
+//       var $cell = $(query);
+//       $cell.toggleClass('hover-ship');
+//     }
+//   })
+// }
 
 
 function createGrid() {
@@ -187,7 +187,7 @@ function startTimer(duration, display) {
 
     if (--timer < 0) {
       window.clearInterval(intervalId)
-      timer = 5;
+      timer = 20;
       alert("Time's up!");
 
       console.log(turn);
@@ -211,7 +211,7 @@ console.log(qn1);
     window.location.reload();
   }
   if (turn === "X") {
-    alert("Player 1, you have 30s to sink as many ships as you can.");
+    alert("Player 1, you have 20s to sink as many ships as you can.");
     var i = Math.floor((Math.random() * 10));
     $('#message').text(sayings[i]);
     startTimer(fourtyfiveSeconds, display);
