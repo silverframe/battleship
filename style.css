@@ -9,8 +9,16 @@
 
 }
 
-.mainHeader > p {
+#title{
         margin: 20px 0px 0px 20px;
+        font-family: 'Montserrat', sans-serif;
+}
+
+#message {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        margin: 0px 0px 0px 0px
 }
 
 #playSign {
@@ -30,7 +38,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        width: 100%;
+        width: 90%;
         height: 500px;
         margin: 0 auto;
         /*align-items:center;*/
@@ -42,8 +50,7 @@
         display: flex;
         flex-direction: column;
         height: auto;
-        margin-top: 15px;
-        margin-bottom: 10px;
+        margin: 0px 50px 0px 50px;
 }
 
 .centerPanel {
@@ -57,6 +64,7 @@
         border: 3px solid black;
         border-radius: 10px;
         font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
         text-align: center;
         line-height: 30px;
         font-size: 30px;
@@ -66,6 +74,7 @@
 
 .Timer > p {
         font-weight: 700;
+        /*font-family: 'Londrina Outline', cursive;*/
 }
 
 #countdownTimer {
@@ -135,10 +144,26 @@
         margin: 10px 0px 10px 0px;
 }
 
+.playerName  {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+}
+
+.yourHits {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+}
+
+.yourMisses {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+}
+
 .twoGrids {
         display: flex;
         height: 500px;
-        margin-top: 20px;
+        /*margin-top: 20px;*/
 
 }
 .entireGrid{
@@ -206,9 +231,9 @@
         background-color: #4682B4;
         margin: 1px;
         text-align: center;
-        font-family: 'Oxygen', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
         font-size: 30px;
-        font-weight: 700;
         color: white;
         line-height: 30px;
         /*align-self: center;*/
@@ -222,21 +247,37 @@
         background-color: #4682B4;
         margin: 1px;
         text-align: center;
-        font-family: 'Oxygen', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
         font-size: 30px;
-        font-weight: 700;
         color: white;
         line-height: 30px;
         /*align-self: center;*/
     }
 
-/*.square:hover{
+#A1 {
+        -webkit-border-top-left-radius: 10px;
+}
+
+#J1 {
+      -webkit-border-top-right-radius: 10px;
+}
+
+#A10 {
+        -webkit-border-bottom-left-radius:10px;
+}
+
+#J10 {
+        -webkit-border-bottom-right-radius: 10px;
+}
+
+.square:hover{
         background-color: #A9A9A9;
 }
 
 .cell:hover {
         background-color: #A9A9A9;
-}*/
+}
 .hover-ship {
         background-color: #A9A9A9;
 }
@@ -250,7 +291,7 @@
 }
 
 .missed {
-        background-color: #52494A;
+        /*background-color: #52494A;*/
 }
 .labeling {
 
@@ -268,7 +309,9 @@
 
 
 .letters {
+        /*font-family: 'Montserrat', sans-serif;*/
         font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
         width: 31.0px;
 /*        height: 31.8px; */
         background-color: transparent;
@@ -276,7 +319,9 @@
 }
 
 .number {
+        /*font-family: 'Montserrat', sans-serif;*/
         font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
         display: flex;
         width: 31px;
         height: 31px;

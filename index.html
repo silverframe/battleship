@@ -5,7 +5,11 @@
   <title>Battleship</title>
   <link rel="stylesheet" href="style.css">
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Londrina+Outline' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'> -->
+  <!-- <link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700' rel='stylesheet' type='text/css'> -->
   <script src="https://use.fonticons.com/4df65f7b.js"></script>
 </head>
 
@@ -29,7 +33,7 @@
       </div> -->
       <div class="sideScore">
         <div class="player1Score">
-          <div id="player1Name"></div>
+          <div class="playerName"id="player1Name">Player 1</div>
           <div class="yourHits">
             <!-- <p id="player1Hits">Hits:</p> -->
             <p id="hitScore">Hits: 0</p>
@@ -40,7 +44,7 @@
           </div>
         </div>
         <div class="player2Score">
-          <div id="player2Name"></div>
+          <div class="playerName"id="player2Name">Player 2</div>
           <div class="yourHits">
             <!-- <p id="player2Hits">Hits:</p> -->
             <p id="hitScore1">Hits: 0</p>
@@ -54,8 +58,9 @@
     </div>
     <div class="centerPanel">
       <div class="mainHeader">
-        <p>Welcome to Speed Battleship<i class="fa fa-play-circle" id="playSign"></i>
+        <p id="title">Speed Battleship<i class="fa fa-play-circle" id="playSign"></i>
         </p>
+        <p id="message">Reign Fire On Your Enemies</p>
 
       </div>
       <div class="twoGrids">
@@ -243,7 +248,7 @@
                   <div class="cell" class="column 10" id="J10"></div>
                 </div>
               </div>
-             <div class="gridHeader" id="player1">Enemy Board</div>
+             <div class="gridHeader" id="player1">Seaweed</div>
             </div>
 
             <div class="entireGrid" id="entireGrid2">
@@ -430,7 +435,7 @@
                       <div class="square" class="column 10" id="J10"></div>
                     </div>
                   </div>
-                  <div class="gridHeader" id="player2">Your Board</div>
+                  <div class="gridHeader" id="player2">Sea Urchins</div>
                 </div>
               </div>
             </div>
