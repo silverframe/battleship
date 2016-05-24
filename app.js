@@ -15,13 +15,9 @@ var hits1 = 0;
 
 var misses1 = 0;
 
-// var accurate = hit/(hit+miss);
-//
-// var accurate1 = hit1/(hit1+miss1);
+var accurate = hits/(hits+misses);
 
-// var sayings = ["Even good things come to an end.", "Did you squash your enemy?", "Wasn't that fun?",
-// "Cool stuff.","Howdy there.", "How were the sea animals?", "Dolphins are nice, aren't they?", "That was some crazy clicking",
-// "" ];
+var accurate1 = hits1/(hits1+misses1);
 
 var sayings = ["Loose Cannon", "Plain Sailing", "Know the Ropes", "Tide Over", "High and Dry", "Get Underway",
 "Anchors Aweigh", "All at Sea", "Panic Stations", "Push the Boat Out"];
@@ -35,8 +31,9 @@ display = document.querySelector('#countdownTimer');
 $(function() {
   'use strict';
   createGrid();
-  newShips();
-  newShips1();
+  // newShips();
+  // newShips1();
+  shipsOut();
   // var el = document.getElementById("playSign");
   // el.addEventListener("click", getNames);
   // getNames();
@@ -117,33 +114,56 @@ function createShipsArray() {
   return outerArray;
 }
 
-function newShips() {
-  for (var i = 0; i < 21; i++) {
-    var newNumber = Math.floor((Math.random() * 10));
-    var newNumber1 = Math.floor((Math.random() * 10));
-    var query = '.square[data-x="' + newNumber + '"]' + '[data-y="' + newNumber1 + '"]';
-    var $cell = $(query);
-    var x = Number($cell.attr('data-x'));
-    var y = Number($cell.attr('data-y'));
-    arrayShips[x][y] = true;
-    console.log($cell);
+// function newShips() {
+//   for (var i = 0; i < 21; i++) {
+//     var newNumber = Math.floor((Math.random() * 10));
+//     var newNumber1 = Math.floor((Math.random() * 10));
+//     var query = '.square[data-x="' + newNumber + '"]' + '[data-y="' + newNumber1 + '"]';
+//     var $cell = $(query);
+//     var x = Number($cell.attr('data-x'));
+//     var y = Number($cell.attr('data-y'));
+//     arrayShips[x][y] = true;
+//     console.log($cell);
+//   }
+// }
+//
+// function newShips1() {
+//   for (var i = 0; i < 21; i++) {
+//     var newNumber = Math.floor((Math.random() * 10));
+//     var newNumber1 = Math.floor((Math.random() * 10));
+//     var query = '.cell[data-x="' + newNumber + '"]' + '[data-y="' + newNumber1 + '"]';
+//     var $cell = $(query);
+//     var x = Number($cell.attr('data-x'));
+//     var y = Number($cell.attr('data-y'));
+//     arrayShips[x][y] = true;
+//     console.log($cell);
+//   }
+// }
+
+function shipsOut() {
+  patrolboat= 2;
+  submarine=3;
+  destroyer=3;
+  battleship=4;
+  carrier=5;
+  var boatLength= [2,3,3,4,5];
+
+  function patrolboat (){
+    for (var i = 0; i < 2; i++) {
+      var newNumber = Math.floor((Math.random() * 10));
+      var newNumber1 = Math.floor((Math.random() * 8));
+      var query = '.square[data-x="' + newNumber + '"]' + '[data-y="' + Number(newNumber1 + i) + '"]';
+      var $cell = $(query);
+      var x = Number($cell.attr('data-x'));
+      var y = Number($cell.attr('data-y'));
+      // var dataX = event.delegateTarget.dataset.x;
+      // var dataY = event.delegateTarget.dataset.y;
+      arrayShips[x][y] = true;
+      console.log($cell);
+
+    }
   }
 }
-
-function newShips1() {
-  for (var i = 0; i < 21; i++) {
-    var newNumber = Math.floor((Math.random() * 10));
-    var newNumber1 = Math.floor((Math.random() * 10));
-    var query = '.cell[data-x="' + newNumber + '"]' + '[data-y="' + newNumber1 + '"]';
-    var $cell = $(query);
-    var x = Number($cell.attr('data-x'));
-    var y = Number($cell.attr('data-y'));
-    arrayShips[x][y] = true;
-    console.log($cell);
-  }
-}
-
-
 
 function changeColor(className, idHits, idMiss, hitCounter, missCounter) {
   $(className).click(function() {
@@ -195,7 +215,7 @@ function startTimer(duration, display) {
       alert("Time's up!");
 
       console.log(turn);
-      // console.log(accurate); 
+      console.log(accurate);
       awesome();
 
     }
@@ -264,13 +284,13 @@ function myBoats(boats) {
 
       };
 
-      $("#rotate-button").click(function() {
-      	$(this).toggleClass('hover-ship');
-      	for (var i = 0; i < add; i++) {
-      		var query = '.square[data-x="' + ((Number(dataX)) + (i + 1)) + '"]' + '[data-y="' + dataY + '"]';
-      		var $cell = $(query);
-      		$cell.toggleClass('hover-ship'); }
-      	});
+      // $("#rotate-button").click(function() {
+      // 	$(this).toggleClass('hover-ship');
+      // 	for (var i = 0; i < add; i++) {
+      // 		var query = '.square[data-x="' + ((Number(dataX)) + (i + 1)) + '"]' + '[data-y="' + dataY + '"]';
+      // 		var $cell = $(query);
+      // 		$cell.toggleClass('hover-ship'); }
+      // 	});
 
 
       $(this).on('click', function() {
